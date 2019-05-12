@@ -3,39 +3,58 @@
 //function: find max value of a number list
 function findMax(aNums) {
     var iMax = aNums[0];
+
     for(var iCount=0; iCount<aNums.length; iCount++) {
         if(iMax > aNums[iCount]) {
             iMax = aNums[iCount];
-            console.log("not iMax");
-        } else console.log(iMax);
+        }
     }
+
     return iMax;
-    // console.log(iMax);
 }
 
-var testArray = [1 , 2 , 3 , 4 , 5];
 
+// cf ---------------------------------
+// function findLargest(){
+//   var largest = testArray[0];
+//   for (var i = 0; i < testArray.length; i++) {
+//     if(testArray[i] > largest){
+//       largest = testArray[i];
+//     }
+//   }
+//   console.log(largest);
+// }
+// okay, so: this works in the homework excercise (why?)
+// but here it's only logging 3, which is definitely not the largest Number
+// both findMax and findLargest are logging 3
+// okay so I will try findMax in context?
+// the homework excercise thing is a problem for the homework excercise thing. Still don't know why it works, though?
+//  ---------------------------------
 
 //-----------------------------------------
 
 // Input: Get 3 grades for each student
-// var iSize = parseInt(prompt('Class size?'));
-// var aGradesPhysics = [];
-// var aGradesChemistry = [];
-// var aGradesBiology;
 
-//ParseInt does the same as Number but removes anything other than a number from the value of input
-//Example parseInt(abc123) will give you 123
-// for(var iCount=0; iCount<iSize; iCount++) {
-//     var iGradePhysics = parseInt(prompt('Student '+(iCount+1)+': Grade for Physics out of 100'));
-//     GradesPhysics.push(iGradePhysics);
-//
-//     var iGradeChemistry = parseInt(prompt('Student '+(iCount+1)+': Grade for Biology out of 100'));
-//     aGradesChemistry.push(iGradeChemistry);
-//
-//     var iGradeBiology = parseInt(prompt('Student '+(iCount+1)+': Grade for Chemistry out of 100'));
-//     aGradesBiology.push(iGradeBiology);
-// }
+// okay, let's just get this working.
+// let's make sure we're getting the input values and that we're logging them 
+
+var iSize = parseInt(prompt('Class size?'));
+var aGradesPhysics = [];
+var aGradesChemistry = [];
+var aGradesBiology = [];
+
+function getInputs(){
+    for(var iCount=0; iCount<iSize; iCount++) {
+    var iGradePhysics = parseInt(prompt('Student '+(iCount+1)+': Grade for Physics out of 100'));
+    aGradesPhysics.push(iGradePhysics);
+
+    var iGradeChemistry = parseInt(prompt('Student '+(iCount+1)+': Grade for Biology out of 100'));
+    aGradesChemistry.push(iGradeChemistry);
+
+    var iGradeBiology = parseInt(prompt('Student '+(iCount+1)+': Grade for Chemistry out of 100'));
+    aGradesBiology.push(iGradeBiology);
+  }
+}
 
 // processing: calculate average grade for each student and find top grade in class
 // var aAverageGrades = [];
