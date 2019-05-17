@@ -26,12 +26,15 @@ function getInputs(){
     for(var iCount = 0; iCount < iSize; iCount ++) {
     var iGradePhysics = parseInt(prompt('Student ' + (iCount+1) + ': Grade for Physics out of 100'));
     aGradesPhysics.push(iGradePhysics);
+    console.log('grade for Physics is' + iGradePhysics);
 
     var iGradeChemistry = parseInt(prompt('Student ' + (iCount+1) + ': Grade for Biology out of 100'));
     aGradesChemistry.push(iGradeChemistry);
+    console.log('grade for Chemistry is' + iGradeChemistry);
 
     var iGradeBiology = parseInt(prompt('Student ' + (iCount+1) + ': Grade for Chemistry out of 100'));
     aGradesBiology.push(iGradeBiology);
+    console.log('grade for biographical is' + iGradeBiology);
     }
 }
 
@@ -51,13 +54,8 @@ var iTopGrade = findMax(aAverageGrades);
 // output: list result for each student and top grade
 
 for(var iCount = 0; iCount<aAverageGrades.length; iCount ++) {
-    if (aAverageGrades[iCount] != Number) {
 
-      document.write('Student ' + (iCount + 1) + ': Fail due to Missing Grade' + '<br>');
-
-    }
-
-    else if(aAverageGrades[iCount] < 50) {
+     if(aAverageGrades[iCount] < 50) {
 
         document.write('Student ' + (iCount + 1) + ': Fail' + '<br>');
 
